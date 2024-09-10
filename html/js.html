@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="student"></p>
+    <script>
+        // Create list js Student(id int,name String,mark float)
+        let students =[
+            {id:1,name:"Nguyen Van A",mark:8.9},
+            {id:2,name:"Nguyen Van B",mark:7.9},
+            {id:3,name:"Tran Thi A",mark:9.0},
+            {id:4,name:"Tran Van C",mark:6.5},
+            {id:5,name:"Pham Van A",mark:7.9},
+            {id:6,name:"Pham Thi A",mark:3.0},
+            {id:7,name:"Nguyen Van A",mark:5.0}
+        ];
+        console.log(students);
+        // Map
+        let marks = students.map(student => student.mark);
+        // student => student.mark: in ra chỉ chứ mark
+        console.log("Marks: ", marks);
+        // filter
+        let filterStudents = [];
+        for(let i=0;i<students.length;i++) {
+            if(students[i].mark>8.0) {
+                filterStudents=[...filterStudents,students[i]];
+            }
+        }
+        console.log(filterStudents);
+        // reduce (calculate sum mark) 
+        // reduce(): nhận 2 tham số: hàm callback và giá trị khởi tạo
+        // (sum,student) => sum + student.mark: hàm callback, 0: hàm khởi tạo giá trị
+        let totalMark = students.reduce((sum,student) => sum + student.mark,1);
+        console.log("Tong: ",totalMark);
+        // sort by mark
+        // (a,b) đại điện cho 2 học sinh
+        // a.mark - b.mark: so sánh điểm của hai học sinh (lớn,nhỏ)
+        tangdan=students.sort((a,b) => a.mark - b.mark);
+        console.log("Sap xep tang dan theo diem: ",tangdan);
+    </script>
+</body>
+</html>

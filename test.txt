@@ -1,0 +1,3 @@
+Create list js Student(id int,name String,mark float) 
+Map, filter, reduce (calculate sum mark) 
+sort by mark 
